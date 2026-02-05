@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name">KamustaJuan</string>
+    <!-- Landing -->
+    <string name="landing_tagline">Your journey starts here.</string>
+    <string name="get_started">Get started</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="login">Login</string>
+    <!-- Login -->
+    <string name="welcome_back">Welcome back.</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="dont_have_account">Don\'t have an account?</string>
+    <string name="sign_up">Sign up</string>
+    <!-- Sign Up -->
+    <string name="create_account">Create account.</string>
+    <string name="full_name">Full name</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="create_account_btn">Create account</string>
+    <string name="already_have_account_login">Already have an account? Sign in.</string>
+    <!-- Forgot -->
+    <string name="forgot_title">Reset password.</string>
+    <string name="forgot_subtitle">Enter your email and we\'ll send you a link to reset your password.</string>
+    <string name="send_reset_link">Send reset link</string>
+    <string name="back_to_login">Back to login</string>
+    <!-- Accessibility -->
+    <string name="show_password">Show password</string>
+    <string name="hide_password">Hide password</string>
+    <!-- Dashboard -->
+    <string name="dashboard_title">Dashboard</string>
+    <string name="code_scanner_back">← Back</string>
+    <string name="back_label">← Back</string>
+    <string name="mabuhay">MABUHAY</string>
+    <string name="user_name">Karl Darnayla</string>
+    <string name="upgrade_to_vip">UPGRADE TO VIP</string>
+    <string name="upgrade_to_vip_sub">to get unlimited use of features!</string>
+    <string name="category_hotel">Hotel</string>
+    <string name="category_resort">Resort</string>
+    <string name="category_educational">Educational</string>
+    <string name="category_juan_al">Juan Al</string>
+    <string name="recommendations">Recommendations</string>
+    <string name="see_all">See All</string>
+    <string name="popular_destinations">Popular Destinations</string>
+    <string name="card_boracay_title">Boracay Island</string>
+    <string name="card_boracay_location">Aklan, Philippines</string>
+    <string name="card_boracay_desc">Famous white sand beach and crystal-clear waters</string>
+    <string name="card_palawan_title">Palawan</string>
+    <string name="card_palawan_location">Palawan, Philippines</string>
+    <string name="card_palawan_desc">UNESCO sites and limestone cliffs</string>
+    <string name="card_cebu_title">Cebu</string>
+    <string name="card_cebu_location">Cebu, Philippines</string>
+    <string name="card_cebu_desc">Historic sites and diving spots</string>
+    <string name="card_siargao_title">Siargao</string>
+    <string name="card_siargao_location">Surigao del Norte, Philippines</string>
+    <string name="card_siargao_desc">Surfing capital and island hopping</string>
+    <string name="card_bohol_title">Bohol</string>
+    <string name="card_bohol_location">Bohol, Philippines</string>
+    <string name="card_bohol_desc">Chocolate Hills and tarsiers</string>
+    <string name="card_manila_title">Manila</string>
+    <string name="card_manila_location">Metro Manila, Philippines</string>
+    <string name="card_manila_desc">Capital city and cultural heritage</string>
+    <string name="card_vigan_title">Vigan</string>
+    <string name="card_vigan_location">Ilocos Sur, Philippines</string>
+    <string name="card_vigan_desc">Spanish colonial architecture</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_explore">Explore</string>
+    <string name="nav_bookmark">Bookmark</string>
+    <string name="nav_profile">Profile</string>
+    <string name="suggestions_for_you">Suggestions for you</string>
+    <string name="popular">Popular</string>
+    <string name="page_explore_desc">Discover places and experiences.</string>
+    <string name="page_bookmark_desc">Your saved places and favorites.</string>
+    <string name="page_recommendations_desc">Boracay, Palawan, Cebu, Siargao and more.</string>
+    <string name="page_popular_desc">Top destinations: Boracay, Palawan, Bohol, Manila and more.</string>
+    <string name="page_category_desc">Browse this category.</string>
+</resources>

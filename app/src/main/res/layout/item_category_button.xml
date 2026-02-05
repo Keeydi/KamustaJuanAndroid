@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:background="@drawable/bg_category_button"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="@drawable/bg_card_ripple"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingVertical="14dp"
+    android:paddingHorizontal="4dp">
+
+    <ImageView
+        android:id="@+id/category_icon"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:contentDescription="@string/category_hotel" />
+    <TextView
+        android:id="@+id/category_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+</LinearLayout>

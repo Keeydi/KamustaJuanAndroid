@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/window_background"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+
+            <!-- Top bar: ◀ Code Scanner (left) -->
+            <Button
+                android:id="@+id/btn_dashboard_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:background="@android:color/transparent"
+                android:paddingStart="0dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
+                android:text="@string/code_scanner_back"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:textAllCaps="false" />
+
+            <!-- Profile header: avatar | MABUHAY / Karl Darnayla | diamond + bell -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="4dp"
+                android:paddingVertical="8dp">
+
+                <ImageView
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:background="@drawable/bg_card_icon_placeholder"
+                    android:padding="14dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_person_circle"
+                    android:contentDescription="@string/user_name" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mabuhay"
+                        android:textColor="@color/text_primary"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/user_name"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bg_card_dashboard"
+                    android:elevation="1dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_diamond"
+                        android:contentDescription="VIP" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/btn_bell_notifications"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_card_dashboard"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:elevation="1dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_bell"
+                        android:contentDescription="Notifications" />
+
+                    <TextView
+                        android:id="@+id/notification_badge"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_gravity="top|end"
+                        android:layout_marginTop="-2dp"
+                        android:layout_marginEnd="-2dp"
+                        android:background="@drawable/bg_badge"
+                        android:gravity="center"
+                        android:text="3"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <!-- Upgrade to VIP banner -->
+            <FrameLayout
+                android:id="@+id/card_vip_banner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_vip_banner"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="@drawable/bg_card_ripple"
+                android:padding="20dp"
+                android:elevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/upgrade_to_vip"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/upgrade_to_vip_sub"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:alpha="0.95" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Category buttons: Hotel | Resort | Educational | Juan Al -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <include
+                    android:id="@+id/category_hotel"
+                    layout="@layout/item_category_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp" />
+                <include
+                    android:id="@+id/category_resort"
+                    layout="@layout/item_category_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="3dp" />
+                <include
+                    android:id="@+id/category_educational"
+                    layout="@layout/item_category_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="3dp" />
+                <include
+                    android:id="@+id/category_juan_al"
+                    layout="@layout/item_category_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6dp" />
+            </LinearLayout>
+
+            <!-- Recommendations: header + See All -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/recommendations"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_recommendations_see_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:text="@string/see_all"
+                    android:textColor="@color/primary_button"
+                    android:textSize="14sp"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+
+            <!-- Recommendation cards horizontal -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:clipToPadding="false"
+                android:paddingStart="4dp"
+                android:paddingEnd="16dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <include
+                        android:id="@+id/card_recommendation_1"
+                        layout="@layout/item_card_recommendation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <include
+                        android:id="@+id/card_recommendation_2"
+                        layout="@layout/item_card_recommendation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <include
+                        android:id="@+id/card_recommendation_3"
+                        layout="@layout/item_card_recommendation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <include
+                        android:id="@+id/card_recommendation_4"
+                        layout="@layout/item_card_recommendation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- Popular Destinations: header + See All -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/popular_destinations"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_popular_see_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:text="@string/see_all"
+                    android:textColor="@color/primary_button"
+                    android:textSize="14sp"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+
+            <!-- Popular cards horizontal -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:clipToPadding="false"
+                android:paddingStart="4dp"
+                android:paddingEnd="16dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <include
+                        android:id="@+id/card_popular_dest_1"
+                        layout="@layout/item_card_popular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <include
+                        android:id="@+id/card_popular_dest_2"
+                        layout="@layout/item_card_popular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <include
+                        android:id="@+id/card_popular_dest_3"
+                        layout="@layout/item_card_popular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <include
+                        android:id="@+id/card_popular_dest_4"
+                        layout="@layout/item_card_popular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom navigation bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_nav"
+        android:elevation="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="12dp"
+        android:paddingBottom="16dp"
+        android:paddingHorizontal="8dp">
+
+        <include
+            android:id="@+id/nav_home"
+            layout="@layout/item_bottom_nav_tab"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <include
+            android:id="@+id/nav_explore"
+            layout="@layout/item_bottom_nav_tab"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <include
+            android:id="@+id/nav_bookmark"
+            layout="@layout/item_bottom_nav_tab"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <include
+            android:id="@+id/nav_profile"
+            layout="@layout/item_bottom_nav_tab"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+</LinearLayout>
