@@ -113,30 +113,70 @@ class AuthActivity : Activity() {
 
         // Recommendation cards -> Detail page
         root.findViewById<android.view.View>(R.id.card_recommendation_1).setOnClickListener {
-            showDetailPage(getString(R.string.card_boracay_title), getString(R.string.card_boracay_desc))
+            showDetailPage(
+                getString(R.string.card_boracay_title),
+                getString(R.string.card_boracay_location),
+                "4.8",
+                getString(R.string.card_boracay_desc)
+            )
         }
         root.findViewById<android.view.View>(R.id.card_recommendation_2).setOnClickListener {
-            showDetailPage(getString(R.string.card_palawan_title), getString(R.string.card_palawan_desc))
+            showDetailPage(
+                getString(R.string.card_palawan_title),
+                getString(R.string.card_palawan_location),
+                "4.9",
+                getString(R.string.card_palawan_desc)
+            )
         }
         root.findViewById<android.view.View>(R.id.card_recommendation_3).setOnClickListener {
-            showDetailPage(getString(R.string.card_cebu_title), getString(R.string.card_cebu_desc))
+            showDetailPage(
+                getString(R.string.card_cebu_title),
+                getString(R.string.card_cebu_location),
+                "4.7",
+                getString(R.string.card_cebu_desc)
+            )
         }
         root.findViewById<android.view.View>(R.id.card_recommendation_4).setOnClickListener {
-            showDetailPage(getString(R.string.card_siargao_title), getString(R.string.card_siargao_desc))
+            showDetailPage(
+                getString(R.string.card_siargao_title),
+                getString(R.string.card_siargao_location),
+                "4.9",
+                getString(R.string.card_siargao_desc)
+            )
         }
 
         // Popular cards -> Detail page
         root.findViewById<android.view.View>(R.id.card_popular_dest_1).setOnClickListener {
-            showDetailPage(getString(R.string.card_boracay_title), getString(R.string.card_boracay_desc))
+            showDetailPage(
+                getString(R.string.card_boracay_title),
+                getString(R.string.card_boracay_location),
+                "4.8",
+                getString(R.string.card_boracay_desc)
+            )
         }
         root.findViewById<android.view.View>(R.id.card_popular_dest_2).setOnClickListener {
-            showDetailPage(getString(R.string.card_palawan_title), getString(R.string.card_palawan_desc))
+            showDetailPage(
+                getString(R.string.card_palawan_title),
+                getString(R.string.card_palawan_location),
+                "4.9",
+                getString(R.string.card_palawan_desc)
+            )
         }
         root.findViewById<android.view.View>(R.id.card_popular_dest_3).setOnClickListener {
-            showDetailPage(getString(R.string.card_bohol_title), getString(R.string.card_bohol_desc))
+            showDetailPage(
+                getString(R.string.card_bohol_title),
+                getString(R.string.card_bohol_location),
+                "4.8",
+                getString(R.string.card_bohol_desc)
+            )
         }
         root.findViewById<android.view.View>(R.id.card_popular_dest_4).setOnClickListener {
-            showDetailPage(getString(R.string.card_manila_title), getString(R.string.card_manila_desc))
+            showDetailPage(
+                getString(R.string.card_manila_title),
+                getString(R.string.card_manila_location),
+                "4.7",
+                getString(R.string.card_manila_desc)
+            )
         }
 
         // Bottom nav
@@ -270,9 +310,31 @@ class AuthActivity : Activity() {
         }
     }
 
-    private fun showDetailPage(title: String, content: String) {
-        binding.root.findViewById<TextView>(R.id.tv_page_detail_title).text = title
-        binding.root.findViewById<TextView>(R.id.tv_page_detail_content).text = content
+    private fun showDetailPage(title: String, location: String, rating: String, description: String) {
+        val detailView = binding.viewFlipper.getChildAt(12)
+        detailView.findViewById<TextView>(R.id.tv_page_detail_title).text = title
+        detailView.findViewById<TextView>(R.id.detail_location).text = location
+        detailView.findViewById<TextView>(R.id.detail_rating).text = rating
+        detailView.findViewById<TextView>(R.id.tv_page_detail_content).text = description
+        val bookmarkBtn = detailView.findViewById<ImageButton>(R.id.btn_detail_bookmark)
+        bookmarkBtn.setImageResource(R.drawable.ic_bookmark)
+        bookmarkBtn.setColorFilter(resources.getColor(R.color.text_primary, null))
+        bookmarkBtn.setTag(R.id.btn_detail_bookmark, false)
+        bookmarkBtn.setOnClickListener {
+            @Suppress("DEPRECATION")
+            val isBookmarked = bookmarkBtn.getTag(R.id.btn_detail_bookmark) == true
+            if (isBookmarked) {
+                bookmarkBtn.setImageResource(R.drawable.ic_bookmark)
+                bookmarkBtn.setColorFilter(resources.getColor(R.color.text_primary, null))
+                bookmarkBtn.setTag(R.id.btn_detail_bookmark, false)
+                Toast.makeText(this, "Removed from bookmarks", Toast.LENGTH_SHORT).show()
+            } else {
+                bookmarkBtn.setImageResource(R.drawable.ic_bookmark_filled)
+                bookmarkBtn.setColorFilter(resources.getColor(R.color.primary_button, null))
+                bookmarkBtn.setTag(R.id.btn_detail_bookmark, true)
+                Toast.makeText(this, "Added to bookmarks", Toast.LENGTH_SHORT).show()
+            }
+        }
         showScreen(12)
     }
 
@@ -283,7 +345,7 @@ class AuthActivity : Activity() {
         for (i in 5..11) {
             flipper.getChildAt(i).findViewById<Button>(R.id.btn_page_back)?.setOnClickListener { showScreen(4) }
         }
-        root.findViewById<Button>(R.id.btn_page_detail_back).setOnClickListener { showScreen(4) }
+        root.findViewById<android.view.View>(R.id.btn_page_detail_back).setOnClickListener { showScreen(4) }
     }
 
     private fun setupPasswordToggles() {

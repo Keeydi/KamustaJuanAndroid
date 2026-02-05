@@ -245,23 +245,31 @@
                     <include
                         android:id="@+id/card_recommendation_1"
                         layout="@layout/item_card_recommendation"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_width="260dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp" />
                     <include
                         android:id="@+id/card_recommendation_2"
                         layout="@layout/item_card_recommendation"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_width="260dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp" />
                     <include
                         android:id="@+id/card_recommendation_3"
                         layout="@layout/item_card_recommendation"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_width="260dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp" />
                     <include
                         android:id="@+id/card_recommendation_4"
                         layout="@layout/item_card_recommendation"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_width="260dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp" />
                 </LinearLayout>
             </HorizontalScrollView>
 
@@ -312,23 +320,31 @@
                     <include
                         android:id="@+id/card_popular_dest_1"
                         layout="@layout/item_card_popular"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_width="260dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp" />
                     <include
                         android:id="@+id/card_popular_dest_2"
                         layout="@layout/item_card_popular"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_width="260dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp" />
                     <include
                         android:id="@+id/card_popular_dest_3"
                         layout="@layout/item_card_popular"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_width="260dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp" />
                     <include
                         android:id="@+id/card_popular_dest_4"
                         layout="@layout/item_card_popular"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_width="260dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp" />
                 </LinearLayout>
             </HorizontalScrollView>
         </LinearLayout>
